@@ -1,0 +1,144 @@
+.nav-header{
+  width: 900px;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+}
+
+.home-header{
+  padding: 15px 0;
+  background: white;
+  border-bottom: 1px solid #D3D3D3;
+}
+
+.products{
+  width: 901px;
+  margin: auto;
+}
+
+.greeting{
+  display: flex;
+  margin-top: 10px;
+}
+
+.greeting:hover{
+  cursor: default;
+}
+
+.greeting-username{
+  margin-left: 10px;
+  text-transform: capitalize;
+  font-weight: bolder;
+}
+
+.logout-button {
+  color: white;
+  background: #3897f0;
+  padding: 7px 30px;
+  font-size: 15px;
+  font-weight: 600;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.products {
+  margin-top: 30px;
+  display: flex;
+  flex-wrap: wrap;
+  border-top: 1px solid black;
+  border-left: 1px solid black;
+}
+
+.product {
+  width: 300px;
+  height: 120px;
+  border-bottom: 1px solid black;
+  border-right: 1px solid black;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.product:hover{
+  cursor: pointer;
+  background: #808080;
+}
+
+.description {
+  display: flex;
+  margin-bottom: 3px;
+}
+
+.description tag {
+  width: 50px;
+}
+
+.description div {
+  margin-left: 10px;
+}
+
+.descriptions tag {
+  color: #DAA520;
+}
+
+.descriptions {
+  margin: 10px 10px;
+}
+
+.modal {
+  position: fixed;
+  top: 100px;
+  left: 300px;
+  right: 300px;
+  bottom: 200px;
+  border: 1px solid #ccc;
+  background: #fff;
+  overflow: auto;
+  border-radius: 4px;
+  outline: none;
+  padding: 20px;
+  display: block;
+}
+
+.exit-button{
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  border: 1px solid black;
+  padding: 5px 20px;
+  border-radius: 10px;
+  background: #DCDCDC;
+  color: black;
+}
+
+.exit-button:hover{
+  background: black;
+  color: #DCDCDC;
+}
+
+.product-details {
+  margin-top: 20px;
+}
+
+.product-details div {
+  margin-bottom: 10px;
+}
+
+.detail tag, .detail-description tag {
+  color: 	#DAA520;
+  width: 50px;
+  margin-right: 10px;
+}
+
+.detail-description div {
+  margin-top: 10px;
+}
+
+.detail {
+  display: flex;
+}
+
+.modal-body{
+  -webkit-filter: blur(5px) grayscale(50%);
+  pointer-events: none;
+  cursor: default;
+}
