@@ -1,0 +1,123 @@
+.login-main {
+    width: 380px;
+    height: 260px;
+
+    margin: 100px auto;
+    border: 1px solid rgba(0,0,0,0.15);
+}
+
+.login{
+  background: #3b5998;
+  background-image: linear-gradient(#4e69a2, #3b5998 50%);
+  color: white;
+  padding-left: 20px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  display: flex;
+  position: relative;
+}
+
+.signup {
+  margin-top: 25px;
+}
+
+.login-username {
+  margin-right: 30px;
+}
+
+.field input:focus {
+  box-shadow: 0 0 5px #1AACF4;
+  border: 1px solid #1AACF4;
+}
+
+.login-username input, .login-password input{
+  background: white;
+  width: 120px;
+  color: black;
+}
+
+.login-username div, .login-password div {
+  font-size: 12px;
+  cursor: default;
+}
+
+.login-submit-button {
+  background: #4267b2;
+  border: 1px solid #29487d;
+  font-size: 13px;
+  padding: 3px 3px;
+  cursor: pointer;
+  margin-top: 12px;
+  margin-left: 15px;
+}
+
+.signup {
+  margin: 10px 20px 10px 20px;
+  position: relative;
+}
+
+.signup-header{
+  font-size: 23px;
+  border-bottom: 1px solid #808080;
+  padding-bottom: 5px;
+}
+
+.signupUsername{
+  margin-top: 20px;
+}
+
+.signupUsername, .signupPassword{
+  height: 30px;
+  border-radius: 5px;
+  border: 1px solid #bdc7d8;
+  color: 	black;
+  font-size: 16px;
+  padding-left: 10px;
+  margin-bottom: 15px;
+  background: white;
+}
+
+.signup-submit-button {
+  color: white;
+  background: #2AF388;
+  padding: 7px 30px;
+  font-size: 15px;
+  font-weight: 600;
+  border-radius: 5px;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.5);
+  cursor: pointer;
+}
+
+.loginErrors{
+  position: absolute;
+  bottom: -25px;
+  color: red;
+  right: 70px;
+}
+
+.loginError{
+  font-size: 15px;
+  background: red;
+  padding: 5px;
+  border-radius: 5px;
+  color: white;
+}
+
+.signupErrors{
+  position: absolute;
+  color: red;
+  right: -40px;
+  bottom: 55px;
+}
+
+.signup-error{
+  margin-bottom: 20px;
+}
+
+.signup-error{
+  font-size: 15px;
+  background: red;
+  padding: 5px;
+  border-radius: 5px;
+  color: white;
+}

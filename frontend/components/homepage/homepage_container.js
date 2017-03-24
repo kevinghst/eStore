@@ -7,6 +7,8 @@ const mapStateToProps = (state) => {
   return {
     loggedIn: log,
     currentUser: state.session.currentUser,
+    allProducts: state.product.allProducts,
+    userProducts: state.product.userProducts,
   };
 };
 

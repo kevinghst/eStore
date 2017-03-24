@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link, withRouter } from 'react-router';
+import Products from './products';
 
 class HomePage extends React.Component{
   constructor(props){
@@ -15,11 +16,19 @@ class HomePage extends React.Component{
   }
 
   render(){
+    let currentUser = this.props.currentUser || {};
 
     return(
+      <div className="homePage">
+        <section className="home-header">
+          <div>Welcome Back, {currentUser.username}</div>
           <div className="logout-button">
             <button onClick={this.logout}>Log Out</button>
           </div>
+        </section>
+
+        <Products products={this.props.allProducts} />
+      </div>
     );
   }
 }

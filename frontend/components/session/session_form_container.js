@@ -5,11 +5,26 @@ import {signup, login} from '../../actions/session_actions';
 const mapStateToProps = (state) => {
   const log = !!state.session.currentUser;
 
-  var errors = state.session.loginErrors || [];
+  let signupErrors = [];
+  if (state.session.signupErrors && state.session.signupErrors.length > 0){
+    if(state.session.signupErrors.includes("Username has already been taken")){
+      signupErrors = ["Username already taken!"];
+    } else {
+      signupErrors = ["Password too short! (min 6)"];
+    }
+  }
+
+  let loginErrors = [];
+  if (state.session.loginErrors){
+    state.session.loginErrors.forEach((el) => {
+      loginErrors.push(el + "!");
+    });
+  }
 
   return {
     loggedIn: log,
-    loginErrors: errors,
+    signupErrors: signupErrors,
+    loginErrors: loginErrors,
   };
 };
 
