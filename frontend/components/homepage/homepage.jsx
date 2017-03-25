@@ -1,42 +1,21 @@
 import React from 'react';
-import { Link, withRouter } from 'react-router';
-import Products from './products';
-import Modal from './modal';
-import ProductDetails from './product_details';
+import Catalog from './catalog';
 
 class HomePage extends React.Component{
   constructor(props){
     super(props);
-    this.state = {
-      showModal: null
-    };
+
     this.logout = this.logout.bind(this);
-    this.activateModal = this.activateModal.bind(this);
-    this.closeModal = this.closeModal.bind(this);
   }
 
   componentDidMount(){
-    let body = document.getElementById('container');
-    body.className = "";
+    this.props.getProducts();
   }
 
   logout(){
     this.props.logout().then(() => {
       this.props.router.push("/login");
     });
-  }
-
-  activateModal(e){
-    let sku = e.currentTarget.className.split(" ")[1];
-    this.setState({ showModal: sku });
-    let body = document.getElementById('container');
-    body.className = "modal-body";
-  }
-
-  closeModal(){
-    this.setState({ showModal: null });
-    let body = document.getElementById('container');
-    body.className = "";
   }
 
   render(){
@@ -57,20 +36,11 @@ class HomePage extends React.Component{
             </div>
           </section>
 
-          {this.state.showModal
-            &&
-            <Modal>
-              <ProductDetails
-                product = {this.props.allProducts[this.state.showModal]}
-                closeModal = {this.closeModal}
-              />
-            </Modal>
-          }
+          {React.cloneElement(this.props.children, {
+            currentUser: currentUser,
+            allProducts: this.props.allProducts
+          })}
 
-          <Products
-            products={this.props.allProducts}
-            activateModal={this.activateModal}
-          />
         </div>
       </div>
     );

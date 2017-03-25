@@ -6,24 +6,24 @@ const Products = ({products, activateModal}) => {
   return(
     <ul className="products">
       {
-        productKeys.map((sku, idx) =>
+        productKeys.map((id, idx) =>
            <li className="product" key={idx}>
-             <div className={`descriptions ${sku}`} onClick={activateModal}>
+             <div className={`descriptions ${id}`} onClick={activateModal}>
                <div className="description">
                  <tag>Name:</tag>
-                 <div>{products[sku].name}</div>
+                 <div>{products[id].name}</div>
                </div>
                <div className="description">
                  <tag>Brand:</tag>
-                 <div>{products[sku].brand}</div>
+                 <div>{products[id].brand}</div>
                </div>
                <div className="description">
                  <tag>Model:</tag>
-                 <div>{products[sku].model}</div>
+                 <div>{products[id].model}</div>
                </div>
                <div className="description">
                  <tag>Price:</tag>
-                 <div>{products[sku].price}</div>
+                 <div>{products[id].price}</div>
                </div>
              </div>
           </li>
