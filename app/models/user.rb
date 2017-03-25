@@ -8,6 +8,8 @@ class User < ActiveRecord::Base
     length: { minimum: 6, allow_nil: true }
   )
 
+  has_and_belongs_to_many :products
+
   before_validation :ensure_session_token
 
   def self.find_by_credentials(username, password)
