@@ -1,17 +1,13 @@
-let data = require('json!../products.json');
-let parsedData = {};
-
-data.products.forEach(function(product){
-  parsedData[product["sku"]] = product;
-});
+import {RECEIVE_PRODUCTS} from '../actions/product_actions';
 
 const initState = {
-  allProducts: parsedData,
-  userProducts: [],
+  allProducts: {}
 };
 
 const ProductReducer = (state=initState, action) => {
   switch(action.type){
+    case RECEIVE_PRODUCTS:
+      return { allProducts: action.products }
     default:
       return state;
   }
