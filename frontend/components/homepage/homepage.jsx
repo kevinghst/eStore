@@ -21,9 +21,10 @@ class HomePage extends React.Component{
   }
 
   render(){
+    let cartCount = Object.keys(this.props.userProducts).length;
     let currentUser = this.props.currentUser || {};
     let link = (
-      <Link className="link" to={"/home/cart"}>Cart</Link>
+      <Link className="link" to={"/home/cart"}>Cart ({cartCount})</Link>
     );
     if(this.props.location.pathname === '/home/cart'){
       link = (
