@@ -14,7 +14,7 @@ class HomePage extends React.Component{
 
   updateSearch(e){
     this.setState({
-      search: e.target.value.substr(0, 20);
+      search: e.target.value.substr(0, 20)
     });
   }
 
