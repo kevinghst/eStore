@@ -1,4 +1,4 @@
-# Instructions
+# README
 
 This application is built using Ruby on Rails, Postgres, and React/Redux.
 
