@@ -212,3 +212,13 @@
 .total-price tag {
   margin-right: 10px;
 }
+
+.searchBar {
+  background: white;
+  width: 250px;
+  height: 30px;
+  padding: 2px 10px 2px 10px;
+  border-radius: 3px;
+  color: #90949c;
+  border: 1px solid #A9A9A9;
+}

@@ -5,8 +5,17 @@ import { Link, withRouter } from 'react-router';
 class HomePage extends React.Component{
   constructor(props){
     super(props);
-
+    this.state = {
+      search: ""
+    };
+    this.updateSearch = this.updateSearch.bind(this);
     this.logout = this.logout.bind(this);
+  }
+
+  updateSearch(e){
+    this.setState({
+      search: e.target.value.substr(0, 20)
+    });
   }
 
   componentDidMount(){
@@ -32,6 +41,15 @@ class HomePage extends React.Component{
       )
     }
 
+    let productIds = Object.keys(this.props.allProducts);
+    let that = this;
+    let filteredIds = productIds.filter(
+      (id) => {
+        return that.props.allProducts[id].name.toLowerCase().indexOf(
+          that.state.search.toLowerCase()) !== -1;
+      }
+    );
+
     return(
       <div className="homePage">
         <div id="container">
@@ -41,6 +59,12 @@ class HomePage extends React.Component{
                 <tag>Welcome Back, </tag>
                 <div className="greeting-username">{currentUser.username}</div>
               </div>
+              <input type="text"
+                className = "searchBar"
+                value={this.state.search}
+                onChange={this.updateSearch}
+                placeholder = "Search Products"
+              ></input>
               { link }
               <div className="logout-button">
                 <button onClick={this.logout}>Log Out</button>
@@ -52,7 +76,8 @@ class HomePage extends React.Component{
             currentUser: currentUser,
             allProducts: this.props.allProducts,
             addUserProduct: this.props.addUserProduct,
-            userProducts: this.props.userProducts
+            userProducts: this.props.userProducts,
+            filteredIds: filteredIds
           })}
 
         </div>

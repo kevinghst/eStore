@@ -51,6 +51,7 @@ class Catalog extends React.Component{
         <Products
           products={this.props.allProducts}
           activateModal={this.activateModal}
+          filteredIds={this.props.filteredIds}
         />
       </div>
     );

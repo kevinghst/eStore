@@ -1,12 +1,11 @@
 import React from 'react';
 
-const Products = ({products, activateModal}) => {
-  let productKeys = Object.keys(products);
+const Products = ({products, activateModal, filteredIds}) => {
 
   return(
     <ul className="products">
       {
-        productKeys.map((id, idx) =>
+        filteredIds.map((id, idx) =>
            <li className="product" key={idx}>
              <div className={`descriptions ${id}`} onClick={activateModal}>
                <div className="description">
