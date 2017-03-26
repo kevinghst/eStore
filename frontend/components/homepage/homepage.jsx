@@ -14,7 +14,7 @@ class HomePage extends React.Component{
 
   updateSearch(e){
     this.setState({
-      search: e.target.value.substr(0, 20)
+      search: e.target.value.substr(0, 20);
     });
   }
 
@@ -30,13 +30,13 @@ class HomePage extends React.Component{
   }
 
   render(){
-    let cartCount = Object.keys(this.props.userProducts).length;
+    let cartItemsCount = Object.keys(this.props.userProducts).length;
     let currentUser = this.props.currentUser || {};
-    let link = (
-      <Link className="link" to={"/home/cart"}>Cart ({cartCount})</Link>
+    let cartLink = (
+      <Link className="link" to={"/home/cart"}>Cart ({cartItemsCount})</Link>
     );
     if(this.props.location.pathname === '/home/cart'){
-      link = (
+      cartLink = (
         <Link className="link" to={"/home"}>Catalog</Link>
       )
     }
@@ -65,7 +65,7 @@ class HomePage extends React.Component{
                 onChange={this.updateSearch}
                 placeholder = "Search Products"
               ></input>
-              { link }
+              { cartLink }
               <div className="logout-button">
                 <button onClick={this.logout}>Log Out</button>
               </div>
