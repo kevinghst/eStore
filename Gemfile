@@ -30,7 +30,7 @@ gem 'jbuilder', '~> 2.5'
 # Use ActiveModel has_secure_password
 gem "bcrypt-ruby", :require => "bcrypt"
 
-
+gem "rails_12factor"
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
