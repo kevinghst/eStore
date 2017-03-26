@@ -15,6 +15,13 @@ export const getUserProducts =(userId) => {
 export const deleteProduct = (userId, productId) => {
   return $.ajax({
     method: 'PATCH',
-    url: `/api/products/${userId},${productId}`,
+    url: `/api/products/delete,${userId},${productId}`,
+  });
+};
+
+export const addUserProduct = (userId, productId) => {
+  return $.ajax({
+    method: 'PATCH',
+    url: `/api/products/add,${userId},${productId}`,
   });
 };

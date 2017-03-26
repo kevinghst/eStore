@@ -20,8 +20,8 @@ class Catalog extends React.Component{
   }
 
   activateModal(e){
-    let sku = e.currentTarget.className.split(" ")[1];
-    this.setState({ showModal: sku });
+    let id = e.currentTarget.className.split(" ")[1];
+    this.setState({ showModal: id });
     let body = document.getElementById('container');
     body.className = "modal-body";
   }
@@ -41,6 +41,9 @@ class Catalog extends React.Component{
             <ProductDetails
               product = {this.props.allProducts[this.state.showModal]}
               closeModal = {this.closeModal}
+              addUserProduct = {this.props.addUserProduct}
+              currentUser = {this.props.currentUser}
+              userProducts = {this.props.userProducts}
             />
           </Modal>
         }

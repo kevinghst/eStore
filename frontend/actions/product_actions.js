@@ -2,7 +2,8 @@ import * as APIUtil from '../util/product_api_util';
 
 export const RECEIVE_PRODUCTS = "RECEIVE_PRODUCTS";
 export const RECEIVE_USER_PRODUCTS = "RECEIVE_USER_PRODUCTS";
-export const REMOVE_USER_PRODUCT = "REMOVE_USER_PRODUCT"
+export const REMOVE_USER_PRODUCT = "REMOVE_USER_PRODUCT";
+export const RECEIVE_USER_PRODUCT = "RECEIVE_USER_PRODUCT";
 
 export const receiveUserProducts = userProducts => {
   return {
@@ -21,6 +22,13 @@ export const receiveProducts = products => {
 export const removeUserProduct = productId => {
   return {
     type: REMOVE_USER_PRODUCT,
+    productId
+  }
+}
+
+export const receiveUserProduct = productId => {
+  return {
+    type: RECEIVE_USER_PRODUCT,
     productId
   }
 }
@@ -45,5 +53,12 @@ export function deleteUserProduct(userId, productId){
   return (dispatch) => {
     APIUtil.deleteProduct(userId, productId);
     return dispatch(removeUserProduct(productId));
+  }
+}
+
+export function addUserProduct(userId, productId){
+  return (dispatch) => {
+    APIUtil.addUserProduct(userId, productId);
+    return dispatch(receiveUserProduct(productId));
   }
 }

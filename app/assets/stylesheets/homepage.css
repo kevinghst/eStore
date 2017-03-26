@@ -3,6 +3,7 @@
   margin: auto;
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
 
 .home-header{
@@ -37,6 +38,14 @@
   padding: 7px 30px;
   font-size: 15px;
   font-weight: 600;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.link {
+  padding: 5px 30px;
+  background: #f0c14b;
+  border: 1px solid #a88734 #9c7e31 #846a29;
   border-radius: 5px;
   cursor: pointer;
 }
@@ -89,7 +98,7 @@
   top: 100px;
   left: 300px;
   right: 300px;
-  bottom: 200px;
+  bottom: 190px;
   border: 1px solid #ccc;
   background: #fff;
   overflow: auto;
@@ -141,4 +150,65 @@
   -webkit-filter: blur(5px) grayscale(50%);
   pointer-events: none;
   cursor: default;
+}
+
+.add-button {
+  padding: 5px 30px;
+  background: #f0c14b;
+  border: 1px solid #a88734 #9c7e31 #846a29;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 10px;
+  margin-left: 150px;
+}
+
+.added {
+  padding: 5px 21px;
+  background: white;
+  border: 1px solid #f0c14b;
+}
+
+.userProduct {
+  display: flex;
+  align-items: center;
+  padding: 10px 5px;
+  border-bottom: 1px solid black;
+  border-left: 1px solid black;
+  border-right: 1px solid black;
+  justify-content: space-between;
+}
+
+.userProducts li:first-child{
+  border-top: 1px solid black;
+}
+
+.product-name {
+  width: 250px;
+}
+
+.userProducts {
+  width: 800px;
+  margin: 20px auto;
+}
+
+.userProduct button {
+  color: red;
+}
+
+.name-sign {
+  margin-left: 80px;
+}
+
+.price-sign {
+  margin-right: 290px;
+}
+
+.total-price {
+  margin-top: 15px;
+  margin-left: 380px;
+  display: flex;
+}
+
+.total-price tag {
+  margin-right: 10px;
 }

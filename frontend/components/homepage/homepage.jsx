@@ -1,5 +1,6 @@
 import React from 'react';
 import Catalog from './catalog';
+import { Link, withRouter } from 'react-router';
 
 class HomePage extends React.Component{
   constructor(props){
@@ -10,6 +11,7 @@ class HomePage extends React.Component{
 
   componentDidMount(){
     this.props.getProducts();
+    this.props.getUserProducts(this.props.currentUser.id);
   }
 
   logout(){
@@ -20,6 +22,14 @@ class HomePage extends React.Component{
 
   render(){
     let currentUser = this.props.currentUser || {};
+    let link = (
+      <Link className="link" to={"/home/cart"}>Cart</Link>
+    );
+    if(this.props.location.pathname === '/home/cart'){
+      link = (
+        <Link className="link" to={"/home"}>Catalog</Link>
+      )
+    }
 
     return(
       <div className="homePage">
@@ -30,6 +40,7 @@ class HomePage extends React.Component{
                 <tag>Welcome Back, </tag>
                 <div className="greeting-username">{currentUser.username}</div>
               </div>
+              { link }
               <div className="logout-button">
                 <button onClick={this.logout}>Log Out</button>
               </div>
@@ -38,7 +49,9 @@ class HomePage extends React.Component{
 
           {React.cloneElement(this.props.children, {
             currentUser: currentUser,
-            allProducts: this.props.allProducts
+            allProducts: this.props.allProducts,
+            addUserProduct: this.props.addUserProduct,
+            userProducts: this.props.userProducts
           })}
 
         </div>

@@ -12,12 +12,18 @@ class Api::ProductsController < ApplicationController
 
   def update
     ids = params[:id].split(",")
-    user_id = ids[0]
-    product_id = ids[1]
+
+    update_type = ids[0]
+    user_id = ids[1]
+    product_id = ids[2]
 
     product = Product.find(product_id)
     user = User.find(user_id)
 
-    user.products.delete(product)
+    if update_type === "delete"
+      user.products.delete(product)
+    else
+      user.products << product
+    end
   end
 end
