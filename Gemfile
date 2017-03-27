@@ -31,6 +31,8 @@ gem 'jbuilder', '~> 2.5'
 gem "bcrypt-ruby", :require => "bcrypt"
 
 gem "rails_12factor"
+
+gem 'newrelic_rpm'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
