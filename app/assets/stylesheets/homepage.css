@@ -99,8 +99,8 @@
   position: fixed;
   top: 100px;
   left: 300px;
-  right: 300px;
-  bottom: 190px;
+  right: 320px;
+  bottom: 160px;
   border: 1px solid #ccc;
   background: #fff;
   overflow: auto;
@@ -161,7 +161,7 @@
   border-radius: 5px;
   cursor: pointer;
   margin-top: 10px;
-  margin-left: 150px;
+  margin-left: 170px;
 }
 
 .added {
