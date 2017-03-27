@@ -36,7 +36,7 @@ class ProductDetails extends React.Component{
     }
 
     return(
-      <div>
+      <div className="modal-content">
         <div className="product-details">
           <div className="detail">
             <tag>Name:</tag>
